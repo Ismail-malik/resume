@@ -6,12 +6,16 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, ListFlowable, ListItem
 
 
+
+# api/index.py
 from flask import Flask
+
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return "Hello from Flask on Vercel!"
+@app.get("/")
+def root():
+    return "Flask serverless function on Vercel"
+
 
 
 app = Flask(__name__, template_folder='templates', static_folder='static')

@@ -1,0 +1,4 @@
+
+# pyproject.toml (root)
+[project.scripts]
+app = "backend.server:app"

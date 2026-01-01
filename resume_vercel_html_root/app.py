@@ -5,6 +5,15 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, ListFlowable, ListItem
 
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello from Flask on Vercel!"
+
+
 app = Flask(__name__, template_folder='templates', static_folder='static')
 # Load templates from both /templates and project root (for index.html at root)
 app.jinja_loader = ChoiceLoader([
